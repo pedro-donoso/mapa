@@ -1,3 +1,2 @@
-# ejemplo marcadores
-## mapa_leaflet
-
+# marcadores
+ sitios salamanca
