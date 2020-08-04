@@ -1,6 +1,6 @@
 const map = L.map('map', {
     center: [40.952, -5.660],
-    zoom: 16
+    zoom: 14
 });
 const osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
