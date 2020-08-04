@@ -1,51 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<div id="map"></div>
 
 <head>
-    <meta charset=utf-8 />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leaflet personalizando marcadores geoJSON</title>
+    <!-- Plugin Leaflet.awesome-markers  -->
+    <link rel="stylesheet" href="leaflet.awesome-markers.css" />
+    <!-- Plugin Leaflet.awesome-markers  -->
     <!-- Cargamos Leaflet -->
     <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.2/dist/leaflet.css" />
+    <!-- Cargamos Leaflet -->
     <!--  Bootstrap  -->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Plugin Leaflet.awesome-markers  -->
-    <link rel="stylesheet" href="leaflet.awesome-markers.css" />
-    <script src="leaflet.awesome-markers.js"></script>
-    <script src="SalamancaMonumental.js"></script>
-    <style>
-        #map {
-            width: 1100px;
-            height: 1900px;
-        }
-    </style>
+    <!--  Bootstrap  -->
+    <link rel="stylesheet" href="style.css">
+    <!-- scripts -->
 </head>
 
 <body>
-    <div id="map"></div>
-    <script type="text/javascript">
-        var map = L.map('map', {
-            center: [40.952, -5.664],
-            zoom: 16
-        });
-        var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-        //Iconos de bootstrap
-        var miMarker = L.AwesomeMarkers.icon({
-            icon: 'tower',
-            prefix: 'glyphicon',
-            markerColor: 'red'
-        });
-        var monumentos = function (feature, marker) {
-            marker.setIcon(miMarker);
-            marker.bindPopup("<ul><h3>" + feature.properties.Nombre + " </h3><li>Estilo: " + feature.properties
-                .Estilo + "</li><li>Siglo: " + feature.properties.Siglo + "</li></ul>");
-        };
-        //Arqueoloxía		
-        var monuSalamanca = new L.geoJSON(geojson, {
-            onEachFeature: monumentos
-        }).addTo(map);
-    </script>
 </body>
+<!-- scripts -->
+<script src="leaflet.awesome-markers.js"></script>
+<script src="SalamancaMonumental.js"></script>
+<script src="main.js"></script>
 
 </html>
